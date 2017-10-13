@@ -1,0 +1,9 @@
+[submodule "packages/firefox-developer-ja"]
+	path = packages/firefox-developer-ja
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ja.git
+[submodule "packages/firefox-developer-zh-cn"]
+	path = packages/firefox-developer-zh-cn
+	url = ssh://aur@aur.archlinux.org/firefox-developer-zh-cn.git
+[submodule "packages/firefox-developer-zh-tw"]
+	path = packages/firefox-developer-zh-tw
+	url = ssh://aur@aur.archlinux.org/firefox-developer-zh-tw.git
