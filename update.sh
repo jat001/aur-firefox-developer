@@ -22,6 +22,8 @@ sha512sums=$(curl "https://download-installer.cdn.mozilla.net/pub/devedition/rel
 git submodule update --init --remote --recursive
 
 for package in packages/*; do
+    git -C "$package" checkout master
+
     pkgname=${package#*/}
     pkgbuild="$package/PKGBUILD"
     srcinfo="$package/.SRCINFO"
