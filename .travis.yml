@@ -1,0 +1,8 @@
+install:
+  - openssl aes-256-cbc -K $encrypted_caaf7cb5c9ab_key -iv $encrypted_caaf7cb5c9ab_iv -in ssh/id_ecdsa.enc -out ~/.ssh/id_ecdsa -d
+
+  - git config --global user.email 'jat@sinosky.org'
+  - git config --global user.name 'Jat'
+
+script:
+  - ./update.sh
