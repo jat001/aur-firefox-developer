@@ -42,4 +42,5 @@ for package in packages/*; do
     git -C "$package" commit -a -m "Update version: {$pkgver} -> {$version}"
 done
 
-git commit -a -m "New version: {$version}" && git push --recurse-submodules=on-demand
+git diff --quiet || git commit -a -m "[skip ci] New version: {$version}"
+git push --recurse-submodules=on-demand
