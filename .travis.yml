@@ -8,7 +8,6 @@ install:
 
   - git config --global user.email 'jat@sinosky.org'
   - git config --global user.name 'Jat'
-  - git submodule update --init --recursive
 
 script:
   - ./update.sh

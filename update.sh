@@ -19,6 +19,8 @@ echo "Found the latest version of firefox-developer: $version"
 sha512sums=$(curl "https://download-installer.cdn.mozilla.net/pub/devedition/releases/$version/SHA512SUMS" 2>/dev/null)
 [ -z "$sha512sums" ] && die 'Get sha512sums of firefox-developer error.'
 
+git submodule update --init --recursive
+
 for package in packages/*; do
     pkgname=${package#*/}
     pkgbuild="$package/PKGBUILD"
@@ -35,7 +37,7 @@ for package in packages/*; do
     sed -i -E "s/pkgver=.+/pkgver='$version'/; s/sha512sums_i686=.+/sha512sums_i686=('$sha512sum_i686')/; s/sha512sums_x86_64=.+/sha512sums_x86_64=('$sha512sum_x86_64')/" "$pkgbuild"
 
     ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo" || continue
-    git -C "$package" commit -a -m "Update version: {$pkgver} -> {$version}" && git -C "$package" push
+    git -C "$package" commit -a -m "Update version: {$pkgver} -> {$version}"
 done
 
-exit 0
+git comimit -a -m "New version: {$version}" && git push --recurse-submodules=on-demand
