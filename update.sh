@@ -36,7 +36,7 @@ for package in packages/*; do
     sha512sum_i686=$(echo "$sha512sums" | awk "\$2 ~ /linux-i686\/$locale\/firefox-${version}\.tar\.bz2/ { print \$1 }")
     sha512sum_x86_64=$(echo "$sha512sums" | awk "\$2 ~ /linux-x86_64\/$locale\/firefox-${version}\.tar\.bz2/ { print \$1 }")
     [ -z "$sha512sum_i686" ] || [ -z "$sha512sum_x86_64" ] && error "Get sha512sums of $pkgname error, ignoring." && continue
-    sed -i -E "s/pkgver=.+/pkgver='$version'/; s/sha512sums_i686=.+/sha512sums_i686=('$sha512sum_i686')/; s/sha512sums_x86_64=.+/sha512sums_x86_64=('$sha512sum_x86_64')/" "$pkgbuild"
+    sed -i -E "s/pkgver=.+/pkgver='$version'/; s/pkgrel=.+/pkgrel='1'/; s/sha512sums_i686=.+/sha512sums_i686=('$sha512sum_i686')/; s/sha512sums_x86_64=.+/sha512sums_x86_64=('$sha512sum_x86_64')/" "$pkgbuild"
 
     ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo" || continue
     git -C "$package" commit -a -m "Update version: {$pkgver} -> {$version}"
