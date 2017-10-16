@@ -2,6 +2,10 @@ git:
   submodules: false
 
 install:
+  - '[ "$TRAVIS_BRANCH" == 'master' ] || travis_terminate 0'
+  - rm -r "$TRAVIS_BUILD_DIR"
+  - git clone -b master 'git@github.com:jat001/aur-firefox-developer.git' "$TRAVIS_BUILD_DIR"
+
   - git config --global user.email 'jat@sinosky.org'
   - git config --global user.name 'Jat'
   - git checkout master

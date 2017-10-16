@@ -4,6 +4,6 @@ Automatic update packages of [Firefox Developer Edition](https://www.mozilla.org
 
 ### Available Packages
 
-* [firefox-developer-ja](https://aur.archlinux.org/packages/firefox-developer-ja/)
-* [firefox-developer-zh-cn](https://aur.archlinux.org/packages/firefox-developer-zh-cn/)
-* [firefox-developer-zh-tw](https://aur.archlinux.org/packages/firefox-developer-zh-tw/)
+* [firefox-developer-ja](https://aur.archlinux.org/packages/firefox-developer-ja/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-ja.svg)
+* [firefox-developer-zh-cn](https://aur.archlinux.org/packages/firefox-developer-zh-cn/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-ja.svg)
+* [firefox-developer-zh-tw](https://aur.archlinux.org/packages/firefox-developer-zh-tw/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-ja.svg)
