@@ -42,7 +42,7 @@ for package in packages/*; do
     git -C "$package" commit -a -m "Update version: {$pkgver} -> {$version}"
 done
 
-if ! git diff --quiet; then
+if git diff --quiet; then
     echo 'No package needs to update, exiting.'
     exit 0
 fi
