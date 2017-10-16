@@ -19,7 +19,7 @@ echo "Found the latest version of firefox-developer: $version"
 sha512sums=$(curl "https://download-installer.cdn.mozilla.net/pub/devedition/releases/$version/SHA512SUMS" 2>/dev/null)
 [ -z "$sha512sums" ] && die 'Get sha512sums of firefox-developer error.'
 
-git submodule update --init --recursive
+git submodule update --init --remote --recursive
 
 for package in packages/*; do
     pkgname=${package#*/}
@@ -40,4 +40,4 @@ for package in packages/*; do
     git -C "$package" commit -a -m "Update version: {$pkgver} -> {$version}"
 done
 
-git comimit -a -m "New version: {$version}" && git push --recurse-submodules=on-demand
+git commit -a -m "New version: {$version}" && git push --recurse-submodules=on-demand
