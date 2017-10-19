@@ -34,7 +34,7 @@ for package in packages/*; do
     pkgbuild="$package/PKGBUILD"
     srcinfo="$package/.SRCINFO"
 
-    locale=$(source "$pkgbuild" && echo "$locale")
+    locale=$(source "$pkgbuild" && echo "$_locale")
     pkgver=$(source "$pkgbuild" && echo "$pkgver")
 
     [ -z "$locale" ] && error "Cannot get the locale of $pkgname, ignoring." && continue
