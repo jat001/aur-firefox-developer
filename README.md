@@ -2,7 +2,7 @@
 
 [![build status](https://travis-ci.org/jat001/aur-firefox-developer.svg)](https://travis-ci.org/jat001/aur-firefox-developer)
 
-Automatic update packages of [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) on AUR.
+Automatically update multi-languages release of [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) on AUR.
 
 ### Available Packages
 
