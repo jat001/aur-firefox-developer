@@ -14,3 +14,331 @@
 	path = packages/firefox-developer-af
 	url = ssh://aur@aur.archlinux.org/firefox-developer-af.git
 	branch = master
+[submodule "packages/firefox-developer-ach"]
+	path = packages/firefox-developer-ach
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ach.git
+	branch = master
+[submodule "packages/firefox-developer-an"]
+	path = packages/firefox-developer-an
+	url = ssh://aur@aur.archlinux.org/firefox-developer-an.git
+	branch = master
+[submodule "packages/firefox-developer-ar"]
+	path = packages/firefox-developer-ar
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ar.git
+	branch = master
+[submodule "packages/firefox-developer-as"]
+	path = packages/firefox-developer-as
+	url = ssh://aur@aur.archlinux.org/firefox-developer-as.git
+	branch = master
+[submodule "packages/firefox-developer-ast"]
+	path = packages/firefox-developer-ast
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ast.git
+	branch = master
+[submodule "packages/firefox-developer-az"]
+	path = packages/firefox-developer-az
+	url = ssh://aur@aur.archlinux.org/firefox-developer-az.git
+	branch = master
+[submodule "packages/firefox-developer-be"]
+	path = packages/firefox-developer-be
+	url = ssh://aur@aur.archlinux.org/firefox-developer-be.git
+	branch = master
+[submodule "packages/firefox-developer-bg"]
+	path = packages/firefox-developer-bg
+	url = ssh://aur@aur.archlinux.org/firefox-developer-bg.git
+	branch = master
+[submodule "packages/firefox-developer-bn-bd"]
+	path = packages/firefox-developer-bn-bd
+	url = ssh://aur@aur.archlinux.org/firefox-developer-bn-bd.git
+	branch = master
+[submodule "packages/firefox-developer-bn-in"]
+	path = packages/firefox-developer-bn-in
+	url = ssh://aur@aur.archlinux.org/firefox-developer-bn-in.git
+	branch = master
+[submodule "packages/firefox-developer-br"]
+	path = packages/firefox-developer-br
+	url = ssh://aur@aur.archlinux.org/firefox-developer-br.git
+	branch = master
+[submodule "packages/firefox-developer-bs"]
+	path = packages/firefox-developer-bs
+	url = ssh://aur@aur.archlinux.org/firefox-developer-bs.git
+	branch = master
+[submodule "packages/firefox-developer-ca"]
+	path = packages/firefox-developer-ca
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ca.git
+	branch = master
+[submodule "packages/firefox-developer-cak"]
+	path = packages/firefox-developer-cak
+	url = ssh://aur@aur.archlinux.org/firefox-developer-cak.git
+	branch = master
+[submodule "packages/firefox-developer-cs"]
+	path = packages/firefox-developer-cs
+	url = ssh://aur@aur.archlinux.org/firefox-developer-cs.git
+	branch = master
+[submodule "packages/firefox-developer-cy"]
+	path = packages/firefox-developer-cy
+	url = ssh://aur@aur.archlinux.org/firefox-developer-cy.git
+	branch = master
+[submodule "packages/firefox-developer-dsb"]
+	path = packages/firefox-developer-dsb
+	url = ssh://aur@aur.archlinux.org/firefox-developer-dsb.git
+	branch = master
+[submodule "packages/firefox-developer-el"]
+	path = packages/firefox-developer-el
+	url = ssh://aur@aur.archlinux.org/firefox-developer-el.git
+	branch = master
+[submodule "packages/firefox-developer-en-gb"]
+	path = packages/firefox-developer-en-gb
+	url = ssh://aur@aur.archlinux.org/firefox-developer-en-gb.git
+	branch = master
+[submodule "packages/firefox-developer-en-us"]
+	path = packages/firefox-developer-en-us
+	url = ssh://aur@aur.archlinux.org/firefox-developer-en-us.git
+	branch = master
+[submodule "packages/firefox-developer-en-za"]
+	path = packages/firefox-developer-en-za
+	url = ssh://aur@aur.archlinux.org/firefox-developer-en-za.git
+	branch = master
+[submodule "packages/firefox-developer-eo"]
+	path = packages/firefox-developer-eo
+	url = ssh://aur@aur.archlinux.org/firefox-developer-eo.git
+	branch = master
+[submodule "packages/firefox-developer-es-ar"]
+	path = packages/firefox-developer-es-ar
+	url = ssh://aur@aur.archlinux.org/firefox-developer-es-ar.git
+	branch = master
+[submodule "packages/firefox-developer-es-cl"]
+	path = packages/firefox-developer-es-cl
+	url = ssh://aur@aur.archlinux.org/firefox-developer-es-cl.git
+	branch = master
+[submodule "packages/firefox-developer-et"]
+	path = packages/firefox-developer-et
+	url = ssh://aur@aur.archlinux.org/firefox-developer-et.git
+	branch = master
+[submodule "packages/firefox-developer-eu"]
+	path = packages/firefox-developer-eu
+	url = ssh://aur@aur.archlinux.org/firefox-developer-eu.git
+	branch = master
+[submodule "packages/firefox-developer-fa"]
+	path = packages/firefox-developer-fa
+	url = ssh://aur@aur.archlinux.org/firefox-developer-fa.git
+	branch = master
+[submodule "packages/firefox-developer-ff"]
+	path = packages/firefox-developer-ff
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ff.git
+	branch = master
+[submodule "packages/firefox-developer-fi"]
+	path = packages/firefox-developer-fi
+	url = ssh://aur@aur.archlinux.org/firefox-developer-fi.git
+	branch = master
+[submodule "packages/firefox-developer-fy-nl"]
+	path = packages/firefox-developer-fy-nl
+	url = ssh://aur@aur.archlinux.org/firefox-developer-fy-nl.git
+	branch = master
+[submodule "packages/firefox-developer-ga-ie"]
+	path = packages/firefox-developer-ga-ie
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ga-ie.git
+	branch = master
+[submodule "packages/firefox-developer-gd"]
+	path = packages/firefox-developer-gd
+	url = ssh://aur@aur.archlinux.org/firefox-developer-gd.git
+	branch = master
+[submodule "packages/firefox-developer-gl"]
+	path = packages/firefox-developer-gl
+	url = ssh://aur@aur.archlinux.org/firefox-developer-gl.git
+	branch = master
+[submodule "packages/firefox-developer-gn"]
+	path = packages/firefox-developer-gn
+	url = ssh://aur@aur.archlinux.org/firefox-developer-gn.git
+	branch = master
+[submodule "packages/firefox-developer-gu-in"]
+	path = packages/firefox-developer-gu-in
+	url = ssh://aur@aur.archlinux.org/firefox-developer-gu-in.git
+	branch = master
+[submodule "packages/firefox-developer-he"]
+	path = packages/firefox-developer-he
+	url = ssh://aur@aur.archlinux.org/firefox-developer-he.git
+	branch = master
+[submodule "packages/firefox-developer-hi-in"]
+	path = packages/firefox-developer-hi-in
+	url = ssh://aur@aur.archlinux.org/firefox-developer-hi-in.git
+	branch = master
+[submodule "packages/firefox-developer-hr"]
+	path = packages/firefox-developer-hr
+	url = ssh://aur@aur.archlinux.org/firefox-developer-hr.git
+	branch = master
+[submodule "packages/firefox-developer-hsb"]
+	path = packages/firefox-developer-hsb
+	url = ssh://aur@aur.archlinux.org/firefox-developer-hsb.git
+	branch = master
+[submodule "packages/firefox-developer-hy-am"]
+	path = packages/firefox-developer-hy-am
+	url = ssh://aur@aur.archlinux.org/firefox-developer-hy-am.git
+	branch = master
+[submodule "packages/firefox-developer-id"]
+	path = packages/firefox-developer-id
+	url = ssh://aur@aur.archlinux.org/firefox-developer-id.git
+	branch = master
+[submodule "packages/firefox-developer-is"]
+	path = packages/firefox-developer-is
+	url = ssh://aur@aur.archlinux.org/firefox-developer-is.git
+	branch = master
+[submodule "packages/firefox-developer-ka"]
+	path = packages/firefox-developer-ka
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ka.git
+	branch = master
+[submodule "packages/firefox-developer-kab"]
+	path = packages/firefox-developer-kab
+	url = ssh://aur@aur.archlinux.org/firefox-developer-kab.git
+	branch = master
+[submodule "packages/firefox-developer-kk"]
+	path = packages/firefox-developer-kk
+	url = ssh://aur@aur.archlinux.org/firefox-developer-kk.git
+	branch = master
+[submodule "packages/firefox-developer-km"]
+	path = packages/firefox-developer-km
+	url = ssh://aur@aur.archlinux.org/firefox-developer-km.git
+	branch = master
+[submodule "packages/firefox-developer-kn"]
+	path = packages/firefox-developer-kn
+	url = ssh://aur@aur.archlinux.org/firefox-developer-kn.git
+	branch = master
+[submodule "packages/firefox-developer-ko"]
+	path = packages/firefox-developer-ko
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ko.git
+	branch = master
+[submodule "packages/firefox-developer-lij"]
+	path = packages/firefox-developer-lij
+	url = ssh://aur@aur.archlinux.org/firefox-developer-lij.git
+	branch = master
+[submodule "packages/firefox-developer-lt"]
+	path = packages/firefox-developer-lt
+	url = ssh://aur@aur.archlinux.org/firefox-developer-lt.git
+	branch = master
+[submodule "packages/firefox-developer-lv"]
+	path = packages/firefox-developer-lv
+	url = ssh://aur@aur.archlinux.org/firefox-developer-lv.git
+	branch = master
+[submodule "packages/firefox-developer-mai"]
+	path = packages/firefox-developer-mai
+	url = ssh://aur@aur.archlinux.org/firefox-developer-mai.git
+	branch = master
+[submodule "packages/firefox-developer-mk"]
+	path = packages/firefox-developer-mk
+	url = ssh://aur@aur.archlinux.org/firefox-developer-mk.git
+	branch = master
+[submodule "packages/firefox-developer-ml"]
+	path = packages/firefox-developer-ml
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ml.git
+	branch = master
+[submodule "packages/firefox-developer-mr"]
+	path = packages/firefox-developer-mr
+	url = ssh://aur@aur.archlinux.org/firefox-developer-mr.git
+	branch = master
+[submodule "packages/firefox-developer-ms"]
+	path = packages/firefox-developer-ms
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ms.git
+	branch = master
+[submodule "packages/firefox-developer-my"]
+	path = packages/firefox-developer-my
+	url = ssh://aur@aur.archlinux.org/firefox-developer-my.git
+	branch = master
+[submodule "packages/firefox-developer-nb-no"]
+	path = packages/firefox-developer-nb-no
+	url = ssh://aur@aur.archlinux.org/firefox-developer-nb-no.git
+	branch = master
+[submodule "packages/firefox-developer-nn-no"]
+	path = packages/firefox-developer-nn-no
+	url = ssh://aur@aur.archlinux.org/firefox-developer-nn-no.git
+	branch = master
+[submodule "packages/firefox-developer-nl"]
+	path = packages/firefox-developer-nl
+	url = ssh://aur@aur.archlinux.org/firefox-developer-nl.git
+	branch = master
+[submodule "packages/firefox-developer-or"]
+	path = packages/firefox-developer-or
+	url = ssh://aur@aur.archlinux.org/firefox-developer-or.git
+	branch = master
+[submodule "packages/firefox-developer-pa-in"]
+	path = packages/firefox-developer-pa-in
+	url = ssh://aur@aur.archlinux.org/firefox-developer-pa-in.git
+	branch = master
+[submodule "packages/firefox-developer-pt-br"]
+	path = packages/firefox-developer-pt-br
+	url = ssh://aur@aur.archlinux.org/firefox-developer-pt-br.git
+	branch = master
+[submodule "packages/firefox-developer-pt-pt"]
+	path = packages/firefox-developer-pt-pt
+	url = ssh://aur@aur.archlinux.org/firefox-developer-pt-pt.git
+	branch = master
+[submodule "packages/firefox-developer-ro"]
+	path = packages/firefox-developer-ro
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ro.git
+	branch = master
+[submodule "packages/firefox-developer-rm"]
+	path = packages/firefox-developer-rm
+	url = ssh://aur@aur.archlinux.org/firefox-developer-rm.git
+	branch = master
+[submodule "packages/firefox-developer-si"]
+	path = packages/firefox-developer-si
+	url = ssh://aur@aur.archlinux.org/firefox-developer-si.git
+	branch = master
+[submodule "packages/firefox-developer-sk"]
+	path = packages/firefox-developer-sk
+	url = ssh://aur@aur.archlinux.org/firefox-developer-sk.git
+	branch = master
+[submodule "packages/firefox-developer-sl"]
+	path = packages/firefox-developer-sl
+	url = ssh://aur@aur.archlinux.org/firefox-developer-sl.git
+	branch = master
+[submodule "packages/firefox-developer-son"]
+	path = packages/firefox-developer-son
+	url = ssh://aur@aur.archlinux.org/firefox-developer-son.git
+	branch = master
+[submodule "packages/firefox-developer-sq"]
+	path = packages/firefox-developer-sq
+	url = ssh://aur@aur.archlinux.org/firefox-developer-sq.git
+	branch = master
+[submodule "packages/firefox-developer-sr"]
+	path = packages/firefox-developer-sr
+	url = ssh://aur@aur.archlinux.org/firefox-developer-sr.git
+	branch = master
+[submodule "packages/firefox-developer-sv-se"]
+	path = packages/firefox-developer-sv-se
+	url = ssh://aur@aur.archlinux.org/firefox-developer-sv-se.git
+	branch = master
+[submodule "packages/firefox-developer-ta"]
+	path = packages/firefox-developer-ta
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ta.git
+	branch = master
+[submodule "packages/firefox-developer-te"]
+	path = packages/firefox-developer-te
+	url = ssh://aur@aur.archlinux.org/firefox-developer-te.git
+	branch = master
+[submodule "packages/firefox-developer-th"]
+	path = packages/firefox-developer-th
+	url = ssh://aur@aur.archlinux.org/firefox-developer-th.git
+	branch = master
+[submodule "packages/firefox-developer-tr"]
+	path = packages/firefox-developer-tr
+	url = ssh://aur@aur.archlinux.org/firefox-developer-tr.git
+	branch = master
+[submodule "packages/firefox-developer-uk"]
+	path = packages/firefox-developer-uk
+	url = ssh://aur@aur.archlinux.org/firefox-developer-uk.git
+	branch = master
+[submodule "packages/firefox-developer-ur"]
+	path = packages/firefox-developer-ur
+	url = ssh://aur@aur.archlinux.org/firefox-developer-ur.git
+	branch = master
+[submodule "packages/firefox-developer-uz"]
+	path = packages/firefox-developer-uz
+	url = ssh://aur@aur.archlinux.org/firefox-developer-uz.git
+	branch = master
+[submodule "packages/firefox-developer-vi"]
+	path = packages/firefox-developer-vi
+	url = ssh://aur@aur.archlinux.org/firefox-developer-vi.git
+	branch = master
+[submodule "packages/firefox-developer-xh"]
+	path = packages/firefox-developer-xh
+	url = ssh://aur@aur.archlinux.org/firefox-developer-xh.git
+	branch = master
