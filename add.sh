@@ -55,6 +55,7 @@ while read -r language; do
     (cp -r templates "$package" && sed -i "s/#locale#/$locale/; s/#language#/$language/; s/#pkgver#/$version/; s/#sha512sum_i686#/$sha512sum_i686/; s/#sha512sum_x86_64#/$sha512sum_x86_64/" "$pkgbuild" && ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo") || continue
     (git -C "$package" init && git -C "$package" remote add origin "$aur_git" && git -C "$package" add -A && git -C "$package" commit -m "Initial version: {$version}" && git -C "$package" push -u origin master && git submodule add -b master "$aur_git" "packages/$pkgname") || continue
 
+    echo "* [$pkgname]($aur_http) ![version](http://badge.kloud51.com/aur/v/$pkgname.svg)" >>README.md
     packages+=("$pkgname")
 done <<<"$languages"
 
