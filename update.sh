@@ -27,7 +27,7 @@ sha512sums=$(curl -s "https://download-installer.cdn.mozilla.net/pub/devedition/
 git submodule update --init --remote --recursive || die
 
 for package in packages/*; do
-    git -C "$package" checkout master
+    git -C "$package" checkout -B master origin/master
 
     pkgname=${package#*/}
     echo "Found package: $pkgname"
