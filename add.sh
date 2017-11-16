@@ -1,32 +1,10 @@
 #!/bin/bash
 # author: chat@jat.email
 
-function error () {
-    echo "$@" >&2
-}
+source ./common.sh
 
-function quit () {
-    [ ${#@} -gt 0 ] && echo "$@"
-    exit 0
-}
-
-function die () {
-    [ ${#@} -gt 0 ] && error "$@"
-    exit 1
-}
-
-api_languages='https://product-details.mozilla.org/1.0/languages.json'
-api_versions='https://product-details.mozilla.org/1.0/firefox_versions.json'
-
-languages=$(curl -s $api_languages | jq -c 'to_entries[]' 2>/dev/null)
-version=$(curl -s $api_versions | jq -r '.LATEST_FIREFOX_DEVEL_VERSION' 2>/dev/null)
-
-[ -z "$languages" ] && die 'Cannot get available languages.'
-[ -z "$version" ] && die 'Cannot get the latest version.'
-echo "Found the latest version: $version"
-
-sha512sums=$(curl -s "https://download-installer.cdn.mozilla.net/pub/devedition/releases/$version/SHA512SUMS")
-[ -z "$sha512sums" ] && die 'Cannot get sha512sums.'
+init
+languages=$(echo "$languages" | jq -c 'to_entries[]' 2>/dev/null)
 
 workdir='/tmp/aur-firefox-developer'
 rm -fr "$workdir" && mkdir -p "$workdir"
@@ -60,4 +38,4 @@ while read -r language; do
 done <<<"$languages"
 
 [ ${#packages[@]} -eq 0 ] && quit 'No package needs to add, exiting.'
-git commit -am "[skip ci] ${#packages[*]} new packages: ${packages[*]}" && travis_retry git push
+git commit -am "[skip ci] ${#packages[*]} new packages: ${packages[*]}" && retry git push

@@ -1,37 +1,25 @@
 #!/bin/bash
 # author: chat@jat.email
 
-function error () {
-    echo "$@" >&2
-}
+source ./common.sh
 
-function quit () {
-    [ ${#@} -gt 0 ] && echo "$@"
-    exit 0
-}
+force=0
 
-function die () {
-    [ ${#@} -gt 0 ] && error "$@"
-    exit 1
-}
+while getopts 'fh' flag; do
+    case $flag in
+        f)
+            force=1
+            ;;
 
-api_languages='https://product-details.mozilla.org/1.0/languages.json'
-api_versions='https://product-details.mozilla.org/1.0/firefox_versions.json'
+        ?|h)
+            quit "Usage: $0 [-f]"
+            ;;
+    esac
+done
 
-languages=$(curl -s $api_languages)
-version=$(curl -s $api_versions | jq -r '.LATEST_FIREFOX_DEVEL_VERSION' 2>/dev/null)
-
-[ -z "$languages" ] && die 'Cannot get available languages.'
-[ -z "$version" ] && die 'Cannot get the latest version.'
-echo "Found the latest version: $version"
-
-sha512sums=$(curl -s "https://download-installer.cdn.mozilla.net/pub/devedition/releases/$version/SHA512SUMS")
-[ -z "$sha512sums" ] && die 'Cannot get sha512sums.'
+init
 
 git submodule update --init --remote --recursive || die
-
-[[ "$(git log -1 --pretty=%B)" == *'[force update]'* ]]
-force=$?
 
 for package in packages/*; do
     git -C "$package" checkout -B master origin/master
@@ -49,10 +37,10 @@ for package in packages/*; do
     [ -z "$locale" ] && error 'Cannot get locale, ignoring.' && continue
     [ -z "$pkgver" ] || [ -z "$pkgrel" ] && error 'Cannot get current version, ignoring.' && continue
     echo "Found current version: $pkgver-$pkgrel"
-    [ "$pkgver" == "$version" ] && [ $force -ne 0 ] && error 'Current version is the latest, ignoring.' && continue
+    [ "$pkgver" == "$version" ] && [ $force -ne 1 ] && error 'Current version is the latest, ignoring.' && continue
 
     release=1
-    [ "$pkgver" == "$version" ] && [ $force -eq 0 ] && release=$((pkgrel++))
+    [ "$pkgver" == "$version" ] && [ $force -eq 1 ] && release=$((pkgrel + 1))
 
     language=$(echo "$languages" | jq -r ".[\"$locale\"].English")
     [ -z "$language" ] && error "Unknown locale: $locale" && language="$locale"
@@ -64,6 +52,6 @@ for package in packages/*; do
     (find "$package" -mindepth 1 -maxdepth 1 -not -path "$package/.git" -exec rm -fr {} \; && cp -r templates/* "$package" && sed -i "s/#locale#/$locale/; s/#language#/$language/; s/#pkgver#/$version/; s/#pkgrel#/$release/; s/#sha512sum_i686#/$sha512sum_i686/; s/#sha512sum_x86_64#/$sha512sum_x86_64/" "$pkgbuild" && ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo") || continue
     git -C "$package" commit -am "Update version: {$pkgver-$pkgrel} -> {$version-$release}"
 done
-
+exit
 git diff --quiet && quit 'No package needs to update, exiting.'
-git commit -am "[skip ci] New version: {$version}" && travis_retry git push --recurse-submodules=on-demand
+git commit -am "[skip ci] New version: {$version}" && retry git push --recurse-submodules=on-demand

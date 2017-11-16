@@ -1,8 +1,9 @@
 git:
   submodules: false
 
+if: branch = master AND type != pull_request
+
 install:
-  - '[ "$TRAVIS_BRANCH" == master ] || travis_terminate 0'
   - git checkout -B master origin/master
 
   - openssl aes-256-cbc -K $encrypted_caaf7cb5c9ab_key -iv $encrypted_caaf7cb5c9ab_iv -in ssh/id_ecdsa.enc -out ~/.ssh/id_ecdsa -d
@@ -13,6 +14,11 @@ install:
   - git config --global user.name 'Jat'
   - git remote set-url origin git@github.com:jat001/aur-firefox-developer.git
 
-script:
-  - ./update.sh
-  - ./add.sh
+jobs:
+  include:
+    - stage: update
+      before_script: '[[ "$(git log -1 --pretty=%B)" == *"[force update]"* ]] && args="-f"'
+      script: ./update.sh "$args"
+
+    - stage: add
+      script: ./add.sh
