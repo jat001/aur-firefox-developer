@@ -30,6 +30,9 @@ sha512sums=$(curl -s "https://download-installer.cdn.mozilla.net/pub/devedition/
 
 git submodule update --init --remote --recursive || die
 
+[[ "$(git log -1 --pretty=%B)" == *'[force update]'* ]]
+force=$?
+
 for package in packages/*; do
     git -C "$package" checkout -B master origin/master
 
@@ -41,11 +44,15 @@ for package in packages/*; do
 
     locale=$(source "$pkgbuild" && echo "$_locale")
     pkgver=$(source "$pkgbuild" && echo "$pkgver")
+    pkgrel=$(source "$pkgbuild" && echo "$pkgrel")
 
     [ -z "$locale" ] && error 'Cannot get locale, ignoring.' && continue
-    [ -z "$pkgver" ] && error 'Cannot get current version, ignoring.' && continue
-    echo "Found current version: $pkgver"
-    [ "$pkgver" == "$version" ] && error 'Current version is the latest, ignoring.' && continue
+    [ -z "$pkgver" ] || [ -z "$pkgrel" ] && error 'Cannot get current version, ignoring.' && continue
+    echo "Found current version: $pkgver-$pkgrel"
+    [ "$pkgver" == "$version" ] && [ $force -ne 0 ] && error 'Current version is the latest, ignoring.' && continue
+
+    release=1
+    [ "$pkgver" == "$version" ] && [ $force -eq 0 ] && release=$((pkgver++))
 
     language=$(echo "$languages" | jq -r ".[\"$locale\"].English")
     [ -z "$language" ] && error "Unknown locale: $locale" && language="$locale"
@@ -54,9 +61,9 @@ for package in packages/*; do
     sha512sum_x86_64=$(echo "$sha512sums" | awk "\$2 ~ /linux-x86_64\/$locale\/firefox-${version}\.tar\.bz2/ { print \$1 }")
     [ -z "$sha512sum_i686" ] || [ -z "$sha512sum_x86_64" ] && error 'Cannot get sha512sums, ignoring.' && continue
 
-    (find "$package" -mindepth 1 -maxdepth 1 -not -path "$package/.git" -exec rm -fr {} \; && cp -r templates/* "$package" && sed -i "s/#locale#/$locale/; s/#language#/$language/; s/#pkgver#/$version/; s/#sha512sum_i686#/$sha512sum_i686/; s/#sha512sum_x86_64#/$sha512sum_x86_64/" "$pkgbuild" && ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo") || continue
-    git -C "$package" commit -am "Update version: {$pkgver} -> {$version}"
+    (find "$package" -mindepth 1 -maxdepth 1 -not -path "$package/.git" -exec rm -fr {} \; && cp -r templates/* "$package" && sed -i "s/#locale#/$locale/; s/#language#/$language/; s/#pkgver#/$version/; s/#pkgrel#/$release/; s/#sha512sum_i686#/$sha512sum_i686/; s/#sha512sum_x86_64#/$sha512sum_x86_64/" "$pkgbuild" && ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo") || continue
+    git -C "$package" commit -am "Update version: {$pkgver-$pkgrel} -> {$version-$release}"
 done
 
 git diff --quiet && quit 'No package needs to update, exiting.'
-git commit -am "[skip ci] New version: {$version}" && git push --recurse-submodules=on-demand
+git commit -am "[skip ci] New version: {$version}" && travis_retry git push --recurse-submodules=on-demand
