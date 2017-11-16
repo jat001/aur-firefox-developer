@@ -52,7 +52,7 @@ for package in packages/*; do
     [ "$pkgver" == "$version" ] && [ $force -ne 0 ] && error 'Current version is the latest, ignoring.' && continue
 
     release=1
-    [ "$pkgver" == "$version" ] && [ $force -eq 0 ] && release=$((pkgver++))
+    [ "$pkgver" == "$version" ] && [ $force -eq 0 ] && release=$((pkgrel++))
 
     language=$(echo "$languages" | jq -r ".[\"$locale\"].English")
     [ -z "$language" ] && error "Unknown locale: $locale" && language="$locale"
