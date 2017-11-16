@@ -3,6 +3,14 @@
 
 source ./common.sh
 
+while getopts 'h' flag; do
+    case $flag in
+        h|?)
+            quit "Usage: $0"
+            ;;
+    esac
+done
+
 init
 languages=$(echo "$languages" | jq -c 'to_entries[]' 2>/dev/null)
 

@@ -17,7 +17,7 @@ install:
 jobs:
   include:
     - stage: update
-      before_script: '[[ "$(git log -1 --pretty=%B)" == *"[force update]"* ]] && args="-f"'
+      before_script: '[[ "$(git log -1 --pretty=%B)" == *"[force update]"* ]] && args="-f" || :'
       script: ./update.sh "$args"
 
     - stage: add

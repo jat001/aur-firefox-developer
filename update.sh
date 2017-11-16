@@ -4,21 +4,19 @@
 source ./common.sh
 
 force=0
-
 while getopts 'fh' flag; do
     case $flag in
         f)
             force=1
             ;;
 
-        ?|h)
+        h|?)
             quit "Usage: $0 [-f]"
             ;;
     esac
 done
 
 init
-
 git submodule update --init --remote --recursive || die
 
 for package in packages/*; do
