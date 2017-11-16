@@ -50,6 +50,6 @@ for package in packages/*; do
     (find "$package" -mindepth 1 -maxdepth 1 -not -path "$package/.git" -exec rm -fr {} \; && cp -r templates/* "$package" && sed -i "s/#locale#/$locale/; s/#language#/$language/; s/#pkgver#/$version/; s/#pkgrel#/$release/; s/#sha512sum_i686#/$sha512sum_i686/; s/#sha512sum_x86_64#/$sha512sum_x86_64/" "$pkgbuild" && ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo") || continue
     git -C "$package" commit -am "Update version: {$pkgver-$pkgrel} -> {$version-$release}"
 done
-exit
+
 git diff --quiet && quit 'No package needs to update, exiting.'
 git commit -am "[skip ci] New version: {$version}" && retry git push --recurse-submodules=on-demand
