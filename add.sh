@@ -14,9 +14,6 @@ done
 init
 languages=$(echo "$languages" | jq -c 'to_entries[]' 2>/dev/null)
 
-workdir='/tmp/aur-firefox-developer'
-rm -fr "$workdir" && mkdir -p "$workdir"
-
 packages=()
 while read -r language; do
     locale=$(echo "$language" | jq -r '.key')
