@@ -36,7 +36,7 @@ init () {
 
     wget -O "$workdir/SHA512SUMS" "https://download-installer.cdn.mozilla.net/pub/devedition/releases/$version/SHA512SUMS"
     wget -O "$workdir/SHA512SUMS.asc" "https://download-installer.cdn.mozilla.net/pub/devedition/releases/$version/SHA512SUMS.asc"
-    (gpg --import mozilla-software-releases.key && gpg --verify "$workdir/SHA512SUMS.asc" "$workdir/SHA512SUMS") || die
+    gpg --verify "$workdir/SHA512SUMS.asc" "$workdir/SHA512SUMS" || die
 
     sha512sums=$(<"$workdir/SHA512SUMS")
     [ -z "$sha512sums" ] && die 'Cannot get sha512sums.'
