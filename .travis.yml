@@ -14,7 +14,7 @@ install:
   - chmod 600 ~/.ssh/id_ecdsa
   - ssh-keyscan 'github.com' 'aur.archlinux.org' >> ~/.ssh/known_hosts
 
-  - gpg --keyserver hkps://pgp.mit.edu --recv-keys 14F26682D0916CDD81E37B6D61B7B526D98F0353
+  - gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 14F26682D0916CDD81E37B6D61B7B526D98F0353
 
   - git config --global user.email 'jat@sinosky.org'
   - git config --global user.name 'Jat'
