@@ -5,7 +5,7 @@ if: branch = master AND type != pull_request
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y gnupg-curl
+  - sudo apt-get install -y gnupg-curl ca-certificates
 
 install:
   - git checkout -B master origin/master
