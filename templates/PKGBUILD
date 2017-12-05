@@ -1,3 +1,10 @@
+# Maintainer: Jat <chat@jat.email>
+# This package generated automatically by https://github.com/jat001/aur-firefox-developer
+# Check out https://product-details.mozilla.org/1.0/firefox_versions.json and
+# https://travis-ci.org/jat001/aur-firefox-developer before you flag this package is out of date.
+# JSON updates always later than download available. Travis might build a new package a day later.
+# Please submit a new issue on GitHub if you have any question.
+
 _basename='firefox-developer'
 _locale='#locale#'
 _srcurl='https://download-installer.cdn.mozilla.net/pub/devedition/releases'

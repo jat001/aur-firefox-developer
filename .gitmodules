@@ -350,3 +350,7 @@
 	path = packages/firefox-developer-ne-np
 	url = ssh://aur@aur.archlinux.org/firefox-developer-ne-np.git
 	branch = master
+[submodule "packages/firefox-developer-hu"]
+	path = packages/firefox-developer-hu
+	url = ssh://aur@aur.archlinux.org/firefox-developer-hu.git
+	branch = master

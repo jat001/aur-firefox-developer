@@ -28,7 +28,7 @@ for package in packages/*; do
     pkgbuild="$package/PKGBUILD"
     srcinfo="$package/.SRCINFO"
 
-    locale=$(source "$pkgbuild" && echo "$_locale")
+    locale=$(source "$pkgbuild" && echo "$_locale$_lang")
     pkgver=$(source "$pkgbuild" && echo "$pkgver")
     pkgrel=$(source "$pkgbuild" && echo "$pkgrel")
 
@@ -48,7 +48,7 @@ for package in packages/*; do
     [ -z "$sha512sum_i686" ] || [ -z "$sha512sum_x86_64" ] && error 'Cannot get sha512sums, ignoring.' && continue
 
     (find "$package" -mindepth 1 -maxdepth 1 -not -path "$package/.git" -exec rm -fr {} \; && cp -r templates/* "$package" && sed -i "s/#locale#/$locale/; s/#language#/$language/; s/#pkgver#/$version/; s/#pkgrel#/$release/; s/#sha512sum_i686#/$sha512sum_i686/; s/#sha512sum_x86_64#/$sha512sum_x86_64/" "$pkgbuild" && ./mksrcinfo.sh -p "$pkgbuild" -o "$srcinfo") || continue
-    git -C "$package" commit -am "Update version: {$pkgver-$pkgrel} -> {$version-$release}"
+    git -C "$package" add -A && git -C "$package" commit -am "Update version: {$pkgver-$pkgrel} -> {$version-$release}"
 done
 
 git diff --quiet && quit 'No package needs to update, exiting.'

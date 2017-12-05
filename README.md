@@ -46,6 +46,7 @@ Automatically update multi-languages release of [Firefox Developer Edition](http
 * [firefox-developer-hi-in](https://aur.archlinux.org/packages/firefox-developer-hi-in/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-hi-in.svg)
 * [firefox-developer-hr](https://aur.archlinux.org/packages/firefox-developer-hr/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-hr.svg)
 * [firefox-developer-hsb](https://aur.archlinux.org/packages/firefox-developer-hsb/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-hsb.svg)
+* [firefox-developer-hu](https://aur.archlinux.org/packages/firefox-developer-hu/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-hu.svg)
 * [firefox-developer-hy-am](https://aur.archlinux.org/packages/firefox-developer-hy-am/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-hy-am.svg)
 * [firefox-developer-id](https://aur.archlinux.org/packages/firefox-developer-id/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-id.svg)
 * [firefox-developer-is](https://aur.archlinux.org/packages/firefox-developer-is/) ![version](http://badge.kloud51.com/aur/v/firefox-developer-is.svg)
