@@ -2,7 +2,7 @@
 # This package generated automatically by https://github.com/jat001/aur-firefox-developer
 # Check out https://product-details.mozilla.org/1.0/firefox_versions.json and
 # https://travis-ci.org/jat001/aur-firefox-developer before you flag this package is out of date.
-# JSON updates always later than download available. Travis might build a new package a day later.
+# JSON updates always later than download available. Travis might build new packages after a day.
 # Please submit a new issue on GitHub if you have any question.
 
 _basename='firefox-developer'
