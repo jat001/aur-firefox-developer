@@ -1,3 +1,5 @@
+Deprecated. Use [firefox-developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/) on official repositories instead.
+
 ## AUR Firefox Developer
 
 [![build status](https://travis-ci.org/jat001/aur-firefox-developer.svg)](https://travis-ci.org/jat001/aur-firefox-developer)
